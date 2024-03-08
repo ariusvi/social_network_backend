@@ -1,7 +1,7 @@
 export const getUsers = async (req, res) => {
     try {
         
-        const users = await User.find().select('title');
+        const users = await User.find().select('name');
 
         res.status(200).json(
             {
