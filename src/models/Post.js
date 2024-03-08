@@ -14,6 +14,12 @@ const PostSchema = new Schema(
             type: URL, //todo probar si funciona, sino, cambiar a tipo string
             required: false,
         },
+        author: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User' // Reference to model User
+            }
+        ]
     },
     {
         timestamps: true,
