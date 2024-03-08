@@ -28,7 +28,7 @@ dbConnection()
   console.log("Database connected");
 
   app.listen(PORT, () => {
-    console.log(`Server running o port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   })
 })
 .catch(error => {

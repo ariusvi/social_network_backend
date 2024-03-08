@@ -20,6 +20,7 @@ const UserSchema = new Schema(
       enum: ["user", "admin", "super_admin"],
       default: "user",
     },
+    
   },
   {
     timestamps: true,
