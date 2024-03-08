@@ -68,7 +68,7 @@ export const login = async (req, res) => {
 			email: email,
 		});
 
-		console.log(user);
+		// console.log(user);
 
 		if (!user) {
 			res.status(400).json({
@@ -93,20 +93,20 @@ export const login = async (req, res) => {
 			},
 			process.env.JWT_SECRET,
 			{
-				expiresIn: "2h",
+				expiresIn: "5h",
 			}
 		);
 
 		res.status(200).json({
 			success: true,
 			message: "User logged succesfully",
-			token: token, //MOSTRAMOS EL TOKEN DE MANERA TEMPORAL PARA PODER PROBAR CON ÉL OTRA FUNCIONALIDADES
+			token: token,
 		});
 	} catch (error) {
 		res.status(500).json({
 			success: false,
 			message: "User cant be logged",
-			error: error,
+			error: error.message,
 		});
 	}
 };
