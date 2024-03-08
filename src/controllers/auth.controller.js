@@ -11,7 +11,7 @@ export const register = async (req, res) => {
 		if (password.length < 6 || password.length > 10) {
 			return res.status(400).json({
 				success: false,
-				message: "Password must contain between 6 and 10 characters",
+				message: "Password must be between 6 and 10 characters",
 			});
 		}
 
@@ -39,7 +39,7 @@ export const register = async (req, res) => {
 		res.status(500).json({
 			success: false,
 			message: "User cant be registered",
-			error: error,
+			error: error.message,
 		});
 	}
 };
