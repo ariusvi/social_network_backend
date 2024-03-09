@@ -11,7 +11,7 @@ const PostSchema = new Schema(
             required: true,
         },
         image: { //the user can post an URL of an image
-            type: URL, //todo probar si funciona, sino, cambiar a tipo string
+            type: String,
             required: false,
         },
         author: [

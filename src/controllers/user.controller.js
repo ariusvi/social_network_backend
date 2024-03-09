@@ -1,6 +1,4 @@
 import User from "../models/User.js";
-import jwt from "jsonwebtoken";
-
 
 //retrieve users 
 export const getUsers = async (req, res) => {
