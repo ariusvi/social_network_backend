@@ -1,7 +1,10 @@
 
+
 export const isSuperAdmin = (req, res, next) => {
+    
     try {
-        if (req.tokenData.roleName !== 'super_admin') {
+        // console.log(req.tokenData.roleName)
+        if (req.tokenData.roleName !== 'super_admin') { //todo aquí hay algún fallo o problema
             return res.status(401).json(
                 {
                     success: false,
@@ -14,7 +17,8 @@ export const isSuperAdmin = (req, res, next) => {
         res.status(500).json(
             {
                 success: false,
-                message: "You don't have permisions"
+                message: "You don't have permisions",
+                error: error.message
             }
         )
     }

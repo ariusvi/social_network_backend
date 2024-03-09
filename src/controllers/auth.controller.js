@@ -68,8 +68,6 @@ export const login = async (req, res) => {
 			email: email,
 		});
 
-		// console.log(user);
-
 		if (!user) {
 			res.status(400).json({
 				success: false,
@@ -89,7 +87,6 @@ export const login = async (req, res) => {
 		const token = jwt.sign(
 			{
 				userId: user._id,
-				userEmail: user.email,
 				roleName: user.role,
 			},
 			process.env.JWT_SECRET,

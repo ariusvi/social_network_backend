@@ -2,12 +2,10 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 
 
-//retrieve users //todo falta añadir que esto solo lo pueda hacer el super_admin
+//retrieve users 
 export const getUsers = async (req, res) => {
-    try {
-        
+    try {        
         const users = await User.find().select('-password');
-
         res.status(200).json(
             {
                 success: true,
