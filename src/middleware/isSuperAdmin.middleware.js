@@ -3,8 +3,7 @@
 export const isSuperAdmin = (req, res, next) => {
     
     try {
-        // console.log(req.tokenData.roleName)
-        if (req.tokenData.roleName !== 'super_admin') { //todo aquí hay algún fallo o problema
+        if (req.tokenData.roleName !== 'super_admin') { 
             return res.status(401).json(
                 {
                     success: false,
