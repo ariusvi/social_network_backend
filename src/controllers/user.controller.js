@@ -27,15 +27,13 @@ export const getUsers = async (req, res) => {
 //retrieve user's profile
 export const getUserProfile = async (req, res) => {
     try {
-        const userId = req.token.userId
+        const userId = req.tokenData.userId
+        
         const user = await User.findOne(
             {
-                where: {
-                    id: userId
-                }
+                    _id: userId
             }
-        )
-        console.log(userId);
+        ).select('-password') //it doesn't show the password
 
         if (!user) {
             return res.status(401).json(

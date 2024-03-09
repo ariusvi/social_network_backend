@@ -8,7 +8,7 @@ import { isSuperAdmin } from "../middleware/isSuperAdmin.middleware.js";
 const router = Router();
 
 router.get('/', auth, isSuperAdmin, getUsers)
-router.get ('/profile', auth, getUserProfile) //todo perfil de usuario
+router.get ('/profile', auth, getUserProfile)
 // router.put('/profile', updateUsersProfile) //todo modificar datos del perfil
 
 
