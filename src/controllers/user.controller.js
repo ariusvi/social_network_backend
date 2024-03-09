@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 //retrieve users 
 export const getUsers = async (req, res) => {
-    try {        
+    try {
         const users = await User.find().select('-password');
         res.status(200).json(
             {
@@ -28,10 +28,9 @@ export const getUsers = async (req, res) => {
 export const getUserProfile = async (req, res) => {
     try {
         const userId = req.tokenData.userId
-        
         const user = await User.findOne(
             {
-                    _id: userId
+                _id: userId
             }
         ).select('-password') //it doesn't show the password
 
@@ -61,4 +60,52 @@ export const getUserProfile = async (req, res) => {
             }
         )
     }
+}
+
+//update user's profile
+
+export const updateUsersProfile = async (req, res) => {
+    try {
+        const userId = req.tokenData.userId
+        const name = req.body.name;
+        const findUserById = await User.findOne(
+            {
+                _id: userId
+            }
+        )
+        if (!findUserById) {
+            return res.status(500).json(
+                {
+                    success: false,
+                    message: "User not found",
+                }
+            )
+        }
+
+        const userUpdated = await User.findOneAndUpdate(
+            {
+                _id: userId
+            },
+            {
+                name: name
+            },
+        )
+        res.status(200).json(
+            {
+                success: true,
+                message: "User's profile updated succesfully",
+                data: userUpdated, //todo que devuela el nuevo data actualizado
+            }
+        )
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "ERROR",
+                error: error.message
+            }
+        )
+    }
+
 }
