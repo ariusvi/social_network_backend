@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { createPost } from "../controllers/post.controller.js";
+import { createPost, deletePostById } from "../controllers/post.controller.js";
 import { auth } from "../middleware/auth.middleware.js";
 
 
 
 const router = Router();
 router.post('/', auth, createPost) //todo corregir que muestre el name no el id
-// router.delete('/:id' , deletePostById) //todo eliminar post por id
+router.delete('/:_id' , auth, deletePostById)
 // router.put('/', updatePost) //todo update post por id
 // router.get('/own', getOwnPost) //todo recuperar mis propios posts
 // router.get('/', getPost) //todo recuperar todos los posts
