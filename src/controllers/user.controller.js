@@ -91,7 +91,7 @@ export const updateUsersProfile = async (req, res) => {
             {
                 success: true,
                 message: "User's profile updated succesfully",
-                data: userUpdated, //todo que devuela el nuevo data actualizado
+                data: userUpdated,
             }
         )
 

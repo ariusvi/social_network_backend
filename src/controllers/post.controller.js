@@ -117,3 +117,37 @@ export const updatePost = async (req, res) => {
         )
     }
 }
+
+export const getPostById = async (req, res) => {
+    try {
+
+		const postId = req.params._id
+		const findPostId = await Post.findOne({_id: postId})
+		
+		if (!findPostId) {
+			return res.status(404).json(
+				{
+					success: false,
+					message: "Post not found"
+				}
+			)
+		}
+
+        const post = await Post.findOne({_id: postId});
+        res.status(200).json(
+            {
+                success: true,
+                message: "Post retrieved",
+                data: post
+            }
+        )
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "Post can't be retrieved",
+                error: error.message
+            }
+        )
+    }
+}
