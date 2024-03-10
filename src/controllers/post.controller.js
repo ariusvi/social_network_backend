@@ -29,10 +29,10 @@ export const createPost = async (req, res) => {
 	}
 };
 
+
 export const deletePostById = async (req, res) => {
 	try {
 		const postId = req.params._id
-		console.log(postId);
 		const findPostId = await Post.findOne({
 			_id: postId
 		})
@@ -66,4 +66,54 @@ export const deletePostById = async (req, res) => {
 			}
 		)
 	}
+}
+
+
+export const updatePost = async (req, res) => {
+    try {
+        const postId = req.params._id
+		const title = req.body.title
+		const text = req.body.text
+		const findPostId = await Post.findOne({_id: postId})
+		
+		if (!findPostId) {
+			return res.status(404).json(
+				{
+					success: false,
+					message: "Post not found"
+				}
+			)
+		}
+
+        const postUpdated = await Post.findByIdAndUpdate(
+            {
+                _id: postId
+            },
+            // {
+            //     title: title	//todo que pueda modificar más de un campo
+            // },
+			{
+				text: text
+			},
+			{
+				new: true
+			}
+        )
+        res.status(200).json(
+            {
+                success: true,
+                message: "Post updated succesfully",
+                data: postUpdated,
+            }
+        )
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "ERROR",
+                error: error.message
+            }
+        )
+    }
 }

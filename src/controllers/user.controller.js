@@ -61,16 +61,12 @@ export const getUserProfile = async (req, res) => {
 }
 
 //update user's profile
-
 export const updateUsersProfile = async (req, res) => {
     try {
         const userId = req.tokenData.userId
         const name = req.body.name;
-        const findUserById = await User.findOne(
-            {
-                _id: userId
-            }
-        )
+        const findUserById = await User.findOne({_id: userId })
+
         if (!findUserById) {
             return res.status(500).json(
                 {
@@ -87,6 +83,9 @@ export const updateUsersProfile = async (req, res) => {
             {
                 name: name
             },
+            {
+                new: true
+            }
         )
         res.status(200).json(
             {
