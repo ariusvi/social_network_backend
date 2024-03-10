@@ -1,4 +1,5 @@
 import Post from "../models/Post.js";
+import User from "../models/User.js";
 
 export const createPost = async (req, res) => {
 	try {
@@ -167,6 +168,40 @@ export const getPostById = async (req, res) => {
             {
                 success: false,
                 message: "Post can't be retrieved",
+                error: error.message
+            }
+        )
+    }
+}
+
+export const getOwnPost = async (req, res) => {
+    try {
+        const userId = req.tokenData.userId
+        const user = await User.findOne({_id: userId})
+
+        if (!user) {
+            return res.status(401).json(
+                {
+                    success: false,
+                    message: "Your profile doesn't exist",
+                }
+            )
+        }
+
+        const getOwn = await Post.find({author: userId});
+        res.status(200).json(
+            {
+                success: true,
+                message: "Posts retrieved",
+                data: getOwn
+            }
+        )        
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "ERROR",
                 error: error.message
             }
         )
