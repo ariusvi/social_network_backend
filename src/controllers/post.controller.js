@@ -119,6 +119,7 @@ export const updatePost = async (req, res) => {
     }
 }
 
+
 export const getPost= async (req, res) => {
     try {
         const post = await Post.find();
@@ -140,7 +141,8 @@ export const getPost= async (req, res) => {
     }
 }
 
-export const getPostById = async (req, res) => {
+
+export const getPostById = async (req, res) => { 
     try {
 
 		const postId = req.params._id
@@ -174,6 +176,7 @@ export const getPostById = async (req, res) => {
     }
 }
 
+
 export const getOwnPost = async (req, res) => {
     try {
         const userId = req.tokenData.userId
@@ -194,6 +197,30 @@ export const getOwnPost = async (req, res) => {
                 success: true,
                 message: "Posts retrieved",
                 data: getOwn
+            }
+        )        
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "ERROR",
+                error: error.message
+            }
+        )
+    }
+}
+
+export const getPostByUserId = async (req, res) => { //todo esto no está terminado
+    try {
+        const userId = req.params.userId
+
+        const getPostUser = await Post.find({author: userId});
+        res.status(200).json(
+            {
+                success: true,
+                message: "Posts retrieved",
+                data: getPostUser
             }
         )        
 
