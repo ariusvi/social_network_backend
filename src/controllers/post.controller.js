@@ -1,7 +1,7 @@
 import Post from "../models/Post.js";
 import User from "../models/User.js";
 
-export const createPost = async (req, res) => {
+export const createPost = async (req, res) => { //todo que muestre el name, no el id del autor ¿como?
 	try {
 		const title = req.body.title;
 		const text = req.body.text;
@@ -12,7 +12,6 @@ export const createPost = async (req, res) => {
 		const newPost = await Post.create({
 			title: title,
 			text: text,
-			image: image,
 			author: userId //todo que muestre el name, no el id ¿como?
 		});
 

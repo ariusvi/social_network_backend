@@ -10,10 +10,6 @@ const PostSchema = new Schema(
             type: String,
             required: true,
         },
-        image: { //the user can post an URL of an image
-            type: String,
-            required: false,
-        },
         author: [
             {
                 type: Schema.Types.ObjectId,
