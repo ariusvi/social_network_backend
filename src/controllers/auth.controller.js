@@ -5,8 +5,8 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
 	try {
-		const name = req.body.name;
-		const email = req.body.email;
+		const name = req.body.name.trim(); //trim =  Removes the leading and trailing white space and line terminator characters from a string.
+		const email = req.body.email.trim();
 		const password = req.body.password;
 
 		if (password.length < 6 || password.length > 10) {
