@@ -89,11 +89,10 @@ export const updatePost = async (req, res) => {
             {
                 _id: postId
             },
-            // {
-            //     title: title	//todo que pueda modificar más de un campo
-            // },
 			{
-				text: text
+				title: title,
+                text: text,
+                // new: true
 			},
 			{
 				new: true
