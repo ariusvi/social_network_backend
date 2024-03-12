@@ -233,3 +233,8 @@ export const getPostByUserId = async (req, res) => { //the route of this control
         )
     }
 }
+
+
+export const likePost = async (req, res) => {
+    
+}

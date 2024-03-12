@@ -15,7 +15,12 @@ const PostSchema = new Schema(
                 type: Schema.Types.ObjectId,
                 ref: 'User' // Reference to model User
             }
-        ]
+        ],
+        likes:
+            {
+                type: Number,
+                default: 0
+            },
     },
     {
         timestamps: true,

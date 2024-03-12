@@ -20,12 +20,6 @@ const UserSchema = new Schema(
       enum: ["user", "admin", "super_admin"],
       default: "user",
     },
-    // usersPosts: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Post'
-    //   }
-    // ]
   },
   {
     timestamps: true,
