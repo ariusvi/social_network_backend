@@ -1,24 +1,25 @@
 import User from "../../models/User.js";
 import { fakerES as faker } from '@faker-js/faker';
+import bcrypt from "bcrypt";
 
 const seedUsers = async () => {
     const users = [
         {
             name: "user",
             email: "user@user.com",
-            password: "123456",
+            password: await bcrypt.hash("123456", 8),
             role: "user"
         },
         {
             name: "admin",
             email: "admin@admin.com",
-            password: "123456",
+            password: await bcrypt.hash("123456", 8),
             role: "admin"
         },
         {
             name: "superadmin",
             email: "superadmin@superadmin.com",
-            password: "123456",
+            password: await bcrypt.hash("123456", 8),
             role: "super_admin"
         },
     ];
@@ -27,7 +28,7 @@ const seedUsers = async () => {
         const user = {
             name: faker.person.firstName(),
             email: faker.internet.email(),
-            password: "123456",
+            password: await bcrypt.hash("123456", 8),
             role: "user"
         };
         users.push(user);
