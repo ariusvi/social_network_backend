@@ -210,11 +210,12 @@ export const getOwnPost = async (req, res) => {
     }
 }
 
-export const getPostByUserId = async (req, res) => { //todo esto no está terminado
+
+export const getPostByUserId = async (req, res) => { //the route of this controller is at user.routes.js
     try {
         const userId = req.params.userId
+        const getPostUser = await Post.find({ author: userId })
 
-        const getPostUser = await Post.find({author: userId});
         res.status(200).json(
             {
                 success: true,
