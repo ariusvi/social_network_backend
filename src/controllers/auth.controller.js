@@ -5,13 +5,14 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
 	try {
-		const email = req.body.email;
+		const name = req.body.name.trim(); //trim =  Removes the leading and trailing white space and line terminator characters from a string.
+		const email = req.body.email.trim();
 		const password = req.body.password;
 
 		if (password.length < 6 || password.length > 10) {
 			return res.status(400).json({
 				success: false,
-				message: "Password must contain between 6 and 10 characters",
+				message: "Password must be between 6 and 10 characters",
 			});
 		}
 
@@ -26,6 +27,7 @@ export const register = async (req, res) => {
 		const passwordEncrypted = bcrypt.hashSync(password, 5);
 
 		const newUser = await User.create({
+			name: name,
 			email: email,
 			password: passwordEncrypted,
 		});
@@ -39,7 +41,7 @@ export const register = async (req, res) => {
 		res.status(500).json({
 			success: false,
 			message: "User cant be registered",
-			error: error,
+			error: error.message,
 		});
 	}
 };
@@ -68,8 +70,6 @@ export const login = async (req, res) => {
 			email: email,
 		});
 
-		console.log(user);
-
 		if (!user) {
 			res.status(400).json({
 				success: false,
@@ -93,20 +93,20 @@ export const login = async (req, res) => {
 			},
 			process.env.JWT_SECRET,
 			{
-				expiresIn: "2h",
+				expiresIn: "5h",
 			}
 		);
 
 		res.status(200).json({
 			success: true,
 			message: "User logged succesfully",
-			token: token, //MOSTRAMOS EL TOKEN DE MANERA TEMPORAL PARA PODER PROBAR CON ÉL OTRA FUNCIONALIDADES
+			token: token,
 		});
 	} catch (error) {
 		res.status(500).json({
 			success: false,
 			message: "User cant be logged",
-			error: error,
+			error: error.message,
 		});
 	}
 };
