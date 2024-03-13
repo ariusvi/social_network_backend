@@ -236,5 +236,41 @@ export const getPostByUserId = async (req, res) => { //the route of this control
 
 
 export const likePost = async (req, res) => {
-    
+    try {
+        const userId = req.tokenData.userId;
+        const postId = req.params._id;
+        const post = await Post.findOne({_id: postId});
+
+        if (!post) {
+			return res.status(404).json(
+				{
+					success: false,
+					message: "Post not found"
+				}
+			)
+		}
+
+        const hasLike = post.like.includes(userId);
+        if(hasLike) {                    //check if post has like
+            post.like.pull(userId)      //take like off
+        } else {
+            post.like.push(userId)      //like post
+        }
+        await post.save();
+
+        res.status(200).json({
+            success: true,
+            message:hasLike ? "Post unlike successfully" : "Post like successfully",
+            data: post
+        });
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "ERROR",
+                error: error.message
+            }
+        )
+    }
 }

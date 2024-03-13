@@ -11,7 +11,7 @@ router.put('/:_id', auth, updatePost)
 router.get('/own', auth, getOwnPost)
 router.get('/', auth, getPost) 
 router.get('/:_id', auth, getPostById) 
-router.put('/like/:_id', likePost) //todo dar y quitar like
+router.put('/like/:_id', auth, likePost) //todo dar y quitar like
 
 
 
