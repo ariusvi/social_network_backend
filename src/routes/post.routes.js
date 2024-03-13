@@ -5,13 +5,13 @@ import { auth } from "../middleware/auth.middleware.js";
 
 
 const router = Router();
-router.post('/', auth, createPost) //todo corregir que muestre el name no el id
+router.post('/', auth, createPost) 
 router.delete('/:_id' , auth, deletePostById)
 router.put('/:_id', auth, updatePost) 
 router.get('/own', auth, getOwnPost)
 router.get('/', auth, getPost) 
 router.get('/:_id', auth, getPostById) 
-router.put('/like/:_id', auth, likePost) //todo dar y quitar like
+router.put('/like/:_id', auth, likePost) 
 
 
 
