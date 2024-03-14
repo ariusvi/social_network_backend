@@ -1,3 +1,10 @@
+# Social Network api 💙
+[social_network_img](./img/social_network.JPG)   
+Welcome to the Social Network's api documentation. This api recreates a fictional database where users can register, log and create appointments with the different services that the tattoo studio provides.
+
+
+
+
 ### Como crear un proyecto express desde cero
 
 ```sh
