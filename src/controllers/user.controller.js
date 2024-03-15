@@ -49,7 +49,7 @@ export const getUserProfile = async (req, res) => {
         res.status(500).json(
             {
                 susscess: false,
-                message: "your profile can't be retrieved",
+                message: "Profile can't be retrieved",
                 error: error.message
             }
         )
@@ -95,7 +95,7 @@ export const updateUsersProfile = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "User's profile can't be updated",
                 error: error.message
             }
         )
@@ -135,7 +135,7 @@ export const deleteUserById = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "User can't be deleted",
                 error: error.message
             }
         )

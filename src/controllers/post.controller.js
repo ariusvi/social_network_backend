@@ -61,7 +61,7 @@ export const deletePostById = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "Can't delete post",
                 error: error.message
             }
         )
@@ -110,7 +110,7 @@ export const updatePost = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "Post can't be updated",
                 error: error.message
             }
         )
@@ -202,7 +202,7 @@ export const getOwnPost = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "Posts can't be retrieved",
                 error: error.message
             }
         )
@@ -227,7 +227,7 @@ export const getPostByUserId = async (req, res) => { //the route of this control
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "Post can't be retrieved",
                 error: error.message
             }
         )
@@ -270,7 +270,7 @@ export const likePost = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "Post can't be liked/unliked",
                 error: error.message
             }
         )
