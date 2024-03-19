@@ -1,22 +1,56 @@
-### Como crear un proyecto express desde cero
+# 🔹 Social Network api 🔹 <!-- revisar, no está acabado -->
 
-```sh
-$ npm init --yes
-```
+![social_network_img](./img/Twitter.jpg)  
+Welcome to the Social Network's api documentation. This api recreates a fictional database where users can register, log post and like post.
 
-```bash
-$ npm i express
-```
+<details>
+  <summary>Table of content 📂</summary> <!-- modificar -->
+  <ol>
+    <li><a href="## Deploy 🚀 ">Deploy 🚀 </a></li>
+    <li><a href="## Stack ⚓">Stack ⚓</a></li>
+    <li><a href="## Diagram Database 🌐">Diagram Database 🌐</a></li>
+    <li><a href="## Local installation 💻">Local installation 💻</a></li>
+    <li><a href="## Endpoints ✨">Endpoints ✨</a></li>
+    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
+    <li><a href="#contribuciones">Contribuciones</a></li>
+    <li><a href="#licencia">Licencia</a></li>
+    <li><a href="#webgrafia">Webgrafia</a></li>
+    <li><a href="#desarrollo">Desarrollo</a></li>
+    <li><a href="#agradecimientos">Agradecimientos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ol>
+</details>
 
-```bash
-$ npm i nodemon -D
-```
+## Deploy 🚀
 
-```bash
-$ npm i dotenv -E
-```
+<div align="center">
+    <a href="https://social-network-backend-dev-npdx.2.ie-1.fl0.io"><strong>~ URL to deploy ~ </strong></a>
+</div>
 
-# add type module into package.json
+## Stack ⚓
+
+Tecnologies used:
+
+![Static Badge](https://img.shields.io/badge/JavaScript%20-%20gold)  
+![Static Badge](https://img.shields.io/badge/MongoDB%20-%20darkgreen)
+![Static Badge](https://img.shields.io/badge/FL0%20-%20blue)
+![Static Badge](https://img.shields.io/badge/Atlas%20MongoDB%20-%20lightgreen)  
+![Static Badge](https://img.shields.io/badge/Mongo%20Compas%20-%20lightgreen)
+
+## Diagram Database 🌐
+
+!['imagen-db'](./img/Captura.JPG)
+
+## Local installation 💻
+
+1. Clon repository  
+   `$ npm init --yes`
+2. Instal express  
+   `$ npm i express`
+3. Instal nodemon  
+   `$ npm i nodemon -D`
+   ` $ npm i dotenv -E`
+4. Add type module into package.json
 
 ```json
 {
