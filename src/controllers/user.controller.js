@@ -49,7 +49,7 @@ export const getUserProfile = async (req, res) => {
         res.status(500).json(
             {
                 susscess: false,
-                message: "your profile can't be retrieved",
+                message: "Profile can't be retrieved",
                 error: error.message
             }
         )
@@ -95,10 +95,49 @@ export const updateUsersProfile = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "ERROR",
+                message: "User's profile can't be updated",
                 error: error.message
             }
         )
     }
 
+}
+
+//delete user
+export const deleteUserById = async (req, res) => {
+    try {
+        const userId = req.params._id
+        const findUserId = await User.findOne({
+            _id: userId
+        })
+
+        if (!findUserId) {
+            return res.status(404).json(
+                {
+                    success: false,
+                    message: "User not found"
+                }
+            )
+        }
+
+        const userRemoved = await User.findByIdAndDelete({
+            _id: userId
+        })
+        res.status(200).json(
+            {
+                success: true,
+                message: "User deleted successfully",
+                data: userRemoved
+            }
+        )
+
+    } catch (error) {
+        res.status(500).json(
+            {
+                success: false,
+                message: "User can't be deleted",
+                error: error.message
+            }
+        )
+    }
 }
