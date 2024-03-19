@@ -75,7 +75,7 @@ Tecnologies used:
     
     Registers a new user.
 
-        POST /register
+        POST https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/auth/register
 
     Body:
 
@@ -95,7 +95,7 @@ Tecnologies used:
 - Login user
 
   User logging using their email and password.
-  POST /login
+  POST https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/auth/login
 
   Body:
 
@@ -117,7 +117,7 @@ Tecnologies used:
 - Retrieve all users
 
   Superadmin can retrieve all users registred.
-  GET /
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users
 
   Auth:
   superadmin's token
@@ -139,7 +139,7 @@ Tecnologies used:
 - Retrieve all users
 
   User can retrieve their profile.
-  GET /profile
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users/profile
 
   Auth:
   user's token
@@ -160,7 +160,7 @@ Tecnologies used:
 - Update user's profile
 
   User can update their name.
-  PUT /profile
+  PUT https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users/profile/
 
   Auth:
   user's token
@@ -189,7 +189,7 @@ Tecnologies used:
 - Delete user by id
 
   Superadmin can delete user using their id.
-  DELETE /:_id
+  DELETE https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users/:_id
 
   Auth:
   superadmin's token
@@ -210,7 +210,7 @@ Tecnologies used:
 - Retrieve posts by user's id
 
   User can retrieve posts from other users by their id.
-  GET /posts/:userId
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users/posts/:userId
 
   Auth:
   user's token
@@ -224,8 +224,178 @@ Tecnologies used:
 }
 ```   
 </details>
+</details>
+
+<details>
+<summary>Post</summary>
+<details>
+<summary>Create Post</summary>  
+
+- Create new post
+
+  User can create new post.
+  POST https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+
+Body:
+```json
+{
+  "title": "Post's title",
+  "text": "Post's text"
+}
+```   
+</details>
+
+<details>
+<summary>Update Post</summary>  
+
+- Update a post
+
+  User can update a post using post's id
+  PUT https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/:_id
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+
+Body:
+```json
+{
+  "title": "Post's title updated",
+  "text": "Post's text updated"
+}
+```   
+</details>
+
+<details>
+<summary>Delete Post</summary>  
+
+- Delete a post by id
+
+  User can delete a post with post's id
+  DELETE https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/:_id
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+  
+</details>
+
+<details>
+<summary>Get Posts</summary>  
+
+- Get all posts
+
+  User can get all posts created
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+  
+</details>
 
 
+<details>
+<summary>Get Post by id</summary>  
+
+- Get post by post's id
+
+  User can get an specific post by post's id
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/:_id
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+  
+</details>
+
+<details>
+<summary>Get Own Posts</summary>  
+
+- Get post own user's post
+
+  User can get their own posts
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/own
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+  
+</details>
+
+<details>
+<summary>Like/Unlike post</summary>  
+
+- Put/Pull Like on post
+
+  User can like or unlike a post using post's id
+  GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/posts/like/:_id
+
+  Auth:
+  user's token
+
+    user's credentials:
+
+```json
+{
+  "email": "user@user.com",
+  "password": "123456"
+}
+```   
+
+</details>
 </details>
 
 ## Author ✒️
