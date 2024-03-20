@@ -10,6 +10,7 @@ Welcome to the Social Network's api documentation. This api recreates a fictiona
     <li><a href="## Stack ⚓">Stack ⚓</a></li>
     <li><a href="## Diagram Database 🌐">Diagram Database 🌐</a></li>
     <li><a href="## Local installation 💻">Local installation 💻</a></li>
+    <li><a href="## Users created 👓">Users created 👓</a></li>
     <li><a href="## Endpoints ✨">Endpoints ✨</a></li>
     <li><a href="## Author ✒️">Author ✒️</a></li>
     <li><a href="## Acknowledgements 🙏">Acknowledgements 🙏</a></li>
@@ -59,6 +60,34 @@ Tecnologies used:
    `$ npm i bcrypt`
 7. Instal webtoken  
    `$ npm i jsonwebtoken`
+
+## Users created 👓
+1. User - role: user
+```json
+{
+  "name": "user",
+  "email": "user@user.com",
+  "password": "123456"
+}
+```
+
+2. Admin - role: admin
+```json
+{
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "123456"
+}
+```
+
+3. Superadmin - role: superadmin
+```json
+{
+  "name": "superadmin",
+  "email": "superadmin@superadmin.com",
+  "password": "123456"
+}
+```
 
 ## Endpoints ✨
 
