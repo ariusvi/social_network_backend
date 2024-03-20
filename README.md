@@ -11,13 +11,8 @@ Welcome to the Social Network's api documentation. This api recreates a fictiona
     <li><a href="## Diagram Database 🌐">Diagram Database 🌐</a></li>
     <li><a href="## Local installation 💻">Local installation 💻</a></li>
     <li><a href="## Endpoints ✨">Endpoints ✨</a></li>
-    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
-    <li><a href="#contribuciones">Contribuciones</a></li>
-    <li><a href="#licencia">Licencia</a></li>
-    <li><a href="#webgrafia">Webgrafia</a></li>
-    <li><a href="#desarrollo">Desarrollo</a></li>
-    <li><a href="#agradecimientos">Agradecimientos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="## Author ✒️">Author ✒️</a></li>
+    <li><a href="## Acknowledgements 🙏">Acknowledgements 🙏</a></li>
   </ol>
 </details>
 
