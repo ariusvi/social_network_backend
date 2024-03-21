@@ -109,7 +109,7 @@ export const deleteUserById = async (req, res) => {
         const userId = req.params._id
         const findUserId = await User.findOne({
             _id: userId
-        })
+        }).select('-password')
 
         if (!findUserId) {
             return res.status(404).json(
@@ -122,12 +122,22 @@ export const deleteUserById = async (req, res) => {
 
         const userRemoved = await User.findByIdAndDelete({
             _id: userId
-        })
+        }).select('-password')
+
+            // const userRemovedNoPassword = {
+            //     id: userRemoved._id,
+            //     name: userRemoved.name,
+            //     email: userRemoved.email,
+            //     role: userRemoved.role,
+            //     createdAt: userRemoved.createdAt,
+            //     updatedAt: userRemoved.updatedAt,
+            // };
+
         res.status(200).json(
             {
                 success: true,
                 message: "User deleted successfully",
-                data: userRemoved
+                data: userRemovedNoPassword
             }
         )
 
