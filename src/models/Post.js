@@ -10,12 +10,11 @@ const PostSchema = new Schema(
             type: String,
             required: true,
         },
-        author: [
+        author:
             {
                 type: Schema.Types.ObjectId,
                 ref: 'User' // Reference to model User
-            }
-        ],
+            },
         like:[
             {
                 type: Schema.Types.ObjectId,
