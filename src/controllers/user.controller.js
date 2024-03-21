@@ -124,15 +124,6 @@ export const deleteUserById = async (req, res) => {
             _id: userId
         }).select('-password')
 
-            // const userRemovedNoPassword = {
-            //     id: userRemoved._id,
-            //     name: userRemoved.name,
-            //     email: userRemoved.email,
-            //     role: userRemoved.role,
-            //     createdAt: userRemoved.createdAt,
-            //     updatedAt: userRemoved.updatedAt,
-            // };
-
         res.status(200).json(
             {
                 success: true,
