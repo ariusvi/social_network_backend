@@ -137,7 +137,7 @@ export const deleteUserById = async (req, res) => {
             {
                 success: true,
                 message: "User deleted successfully",
-                data: userRemovedNoPassword
+                data: userRemoved
             }
         )
 
