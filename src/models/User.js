@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose"
 
 const UserSchema = new Schema(
   {
-    name: {
+    nickname: {
       type: String,
       required: true,
     },
@@ -14,6 +14,14 @@ const UserSchema = new Schema(
     password: {
       type: String,
       required: true,
+    },
+    biography: {
+      type: String,
+      required: false,
+    },
+    avatar: {
+      type: URL,
+      required: false,
     },
     role: {
       type: String,
