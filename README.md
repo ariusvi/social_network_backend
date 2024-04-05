@@ -160,7 +160,7 @@ Tecnologies used:
 
 <summary>Get User's Profile</summary>  
 
-- Retrieve all users
+- Retrieve user's profile
 
   User can retrieve their profile.
   GET https://social-network-backend-dev-npdx.2.ie-1.fl0.io/api/users/profile
@@ -433,4 +433,4 @@ Special thanks to Daniel Tarazona for his incredible work as a teacher and above
 
 Thanks to my classmates:  
 Pedro for his patience and help, especially to confirm that I understand things.  
-Marina and Marta for her moral support, joint laughter and tears, as well as their help.
+Marina and Marta for her moral support, with laughter and tears, as well as their help.
