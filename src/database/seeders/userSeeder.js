@@ -5,19 +5,19 @@ import bcrypt from "bcrypt";
 const seedUsers = async () => {
     const users = [
         {
-            name: "user",
+            nickname: "user",
             email: "user@user.com",
             password: await bcrypt.hash("123456", 8),
             role: "user"
         },
         {
-            name: "admin",
+            nickname: "admin",
             email: "admin@admin.com",
             password: await bcrypt.hash("123456", 8),
             role: "admin"
         },
         {
-            name: "superadmin",
+            nickname: "superadmin",
             email: "superadmin@superadmin.com",
             password: await bcrypt.hash("123456", 8),
             role: "super_admin"
@@ -26,7 +26,7 @@ const seedUsers = async () => {
 
     for (let i = 0; i < 8; i++) {
         const user = {
-            name: faker.person.firstName(),
+            nickname: faker.person.firstName(),
             email: faker.internet.email(),
             password: await bcrypt.hash("123456", 8),
             role: "user"
