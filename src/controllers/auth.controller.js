@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
 	try {
-		const name = req.body.name.trim(); //trim =  Removes the leading and trailing white space and line terminator characters from a string.
+		const nickname = req.body.nickname.trim(); //trim =  Removes the leading and trailing white space and line terminator characters from a string.
 		const email = req.body.email.trim();
 		const password = req.body.password;
 
@@ -27,13 +27,13 @@ export const register = async (req, res) => {
 		const passwordEncrypted = bcrypt.hashSync(password, 5);
 
 		const newUser = await User.create({
-			name: name,
+			nickname: nickname,
 			email: email,
 			password: passwordEncrypted,
 		});
 
 		const newUserNoPassword = {
-			name: newUser.name,
+			nickname: newUser.nickname,
 			email: newUser.email,
 		};
 		
