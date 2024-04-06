@@ -20,7 +20,7 @@ const UserSchema = new Schema(
       required: false,
     },
     avatar: {
-      type: URL,
+      type: String,
       required: false,
     },
     role: {

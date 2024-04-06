@@ -11,7 +11,7 @@ const PostSchema = new Schema(
             required: true,
         },
         image: {
-            type:URL,
+            type:String,
             required: false,
         },
         author:
