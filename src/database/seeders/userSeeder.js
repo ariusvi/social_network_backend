@@ -29,7 +29,7 @@ const seedUsers = async () => {
             nickname: "BitterPro",
             email: "astarion@email.com",
             password: await bcrypt.hash("123456", 8),
-            avatar: "https://lh6.googleusercontent.com/proxy/w4ukEl2VVamfAFsGBC226uqJQy3KtK6vqQFOvNXcBPGI7ewIkUwoERlIaaa-ro8Rb4OgzMGHRt80CPL6AsogOdfMTdnxwbEcgega2auvR3rvsMIP2EbzkNdm-A",
+            avatar: "https://i.pinimg.com/originals/7b/51/9a/7b519ad29053cba44fcbef76c02c49b7.gif",
             role: "user",
             biography: "Easy now darling. You've got this, and I've got you. #BitterPro #vampire #living4ever #weirdosHater"
         },
@@ -37,7 +37,7 @@ const seedUsers = async () => {
             nickname: "BBQgirl",
             email: "karlach@email.com",
             password: await bcrypt.hash("123456", 8),
-            avatar: "https://i.blogs.es/a305c2/portada-karlach-y-wyll/500_333.jpeg",
+            avatar: "https://64.media.tumblr.com/262169e15a5631f8583cdced4872edbb/a3d5b3550403da71-3f/s540x810/d468fa72903b2f5523a162efa05d08979cef3c5a.gif",
             user: "user",
             biography: "This girl is on fireeee #mechanicalHeart #softGirl"
         },
@@ -45,7 +45,7 @@ const seedUsers = async () => {
             nickname: "Shadowheart",
             email: "shadowheart@email.com",
             password: await bcrypt.hash("123456", 8),
-            avatar: "https://lh5.googleusercontent.com/proxy/-2L-kqssReQfOIlZOicZYsBnUz2AlL0o9Ri-j1Iz_A17ow9fiz8uM9q1JcEDTcJPbyV1Bz14pZ8y_wrcHLYs6YVjtsnW8ZFAK-LS2HSpCXNQX8bxdDXsKg4AMUdXJA",
+            avatar: "https://64.media.tumblr.com/10385cab3f2708e748a3a51f6abf95c3/5ba2b8e9a7617ded-10/s540x810/4ec1f2d47b08088de7fd297ca5936b5746072fad.gif",
             user: "user",
             biography: "Everyone has to suffer - It's a fact of life #ShadowHeart #darkness #light #shar"
         },
