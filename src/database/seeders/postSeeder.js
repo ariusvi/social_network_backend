@@ -13,6 +13,7 @@ const seedPosts = async () => {
         const post = {
             title: faker.lorem.lines({ min: 1, max: 1 }),
             text: faker.lorem.lines({ min: 1, max: 5 }),
+            image: faker.image.url(),
             author: users[randomUserIndex]._id,
         };
         posts.push(post);
