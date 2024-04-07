@@ -120,7 +120,7 @@ export const updatePost = async (req, res) => {
 
 export const getPost = async (req, res) => {
     try {
-        const post = await Post.find();
+        const post = await Post.find().populate({path:"author", select: "nickname id"});
         res.status(200).json(
             {
                 success: true,
