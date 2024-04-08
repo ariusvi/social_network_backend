@@ -12,6 +12,7 @@ export const createPost = async (req, res) => { //todo que muestre el name, no e
         const newPost = await Post.create({
             title: title,
             text: text,
+            image: image,
             author: userId //todo que muestre el name, no el id ¿como?
         });
 

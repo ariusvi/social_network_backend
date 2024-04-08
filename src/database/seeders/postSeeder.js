@@ -12,7 +12,7 @@ const seedPosts = async () => {
         const randomUserIndex = Math.floor(Math.random() * users.length);
         const post = {
             title: faker.lorem.lines({ min: 1, max: 1 }),
-            text: faker.lorem.lines({ min: 1, max: 5 }),
+            text: faker.lorem.lines({ min: 1, max: 2 }),
             image: faker.image.url(),
             author: users[randomUserIndex]._id,
         };
