@@ -60,7 +60,9 @@ export const getUserProfile = async (req, res) => {
 export const updateUsersProfile = async (req, res) => {
     try {
         const userId = req.tokenData.userId
-        const name = req.body.name;
+        const nickname = req.body.nickname;
+        const avatar = req.body.avatar;
+        const biography = req.body.biography;
         const findUserById = await User.findOne({_id: userId })
 
         if (!findUserById) {
@@ -77,7 +79,13 @@ export const updateUsersProfile = async (req, res) => {
                 _id: userId
             },
             {
-                name: name
+                nickname: nickname
+            },
+            {
+                avatar: avatar
+            },
+            {
+                biography: biography
             },
             {
                 new: true
